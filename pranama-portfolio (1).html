@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pranama Jayawardhane — Fashion Model</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@200;300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #bd7a53; /* Contemporary Earthy Terracotta/Ochre */
+      --gold-dim: #8c5b3c;
+      --gold-glow: #bd7a531a;
+      --black: #13110c; /* Deep Raw Umber / Earthy Shadow */
+      --surface: #1c1912; /* Rich Soil Warm Tonal Surface */
+      --surface2: #242018; 
+      --border: #2c271d; /* Subtle Organic Frame Lines */
+      --border2: #3d3629;
+      --text: #f5f0e1; /* Soft Unbleached Linen Text */
+      --text-dim: #c7beab; /* Muted Sandstone Text */
+      --text-muted: #6e6450; /* Deep Clay Accent Text */
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ─── NOISE TEXTURE OVERLAY ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.45;
+    }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dim); }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      border-bottom: 0.5px solid var(--border);
+      background: #13110cee;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-style: italic;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 300;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      padding-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: 'PRANAMA';
+      position: absolute;
+      bottom: -0.1em;
+      left: -0.02em;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(80px, 18vw, 220px);
+      font-weight: 600;
+      color: transparent;
+      -webkit-text-stroke: 0.5px #2d261b;
+      pointer-events: none;
+      line-height: 1;
+      z-index: 0;
+      letter-spacing: -2px;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 4rem 3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-tag-line {
+      width: 40px;
+      height: 0.5px;
+      background: var(--gold);
+    }
+
+    .hero-tag span {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 6vw, 72px);
+      font-weight: 600;
+      line-height: 1.05;
+      color: var(--text);
+      margin-bottom: 0.15em;
+    }
+
+    .hero-name-italic {
+      font-style: italic;
+      color: var(--gold);
+      font-weight: 400;
+      display: block;
+    }
+
+    .hero-desc {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: var(--text-dim);
+      line-height: 1.8;
+      max-width: 360px;
+      margin: 1.8rem 0 2.5rem;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--black);
+      padding: 0.75rem 2rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover { opacity: 0.85; }
+
+    .btn-secondary {
+      color: var(--text-dim);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--border2);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .btn-secondary:hover { color: var(--gold); border-color: var(--gold); }
+
+    .hero-right {
+      display: flex;
+      align-items: stretch;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-photo-wrap {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      background: var(--surface);
+      border-left: 0.5px solid var(--border);
+    }
+
+    .hero-photo-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, #13110c 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    /* Replace this with your actual <img> tag */
+    .hero-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      background: var(--surface);
+    }
+
+    .placeholder-icon {
+      width: 64px;
+      height: 64px;
+      border: 0.5px solid var(--border2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .placeholder-icon svg { opacity: 0.3; }
+
+    .placeholder-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* Replace .hero-photo-placeholder with this when you have your image:
+    .hero-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+    */
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      animation: bounce 2s infinite;
+      z-index: 2;
+    }
+
+    .hero-scroll-line {
+      width: 0.5px;
+      height: 30px;
+      background: var(--gold-dim);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 0.5px solid var(--border);
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .stat-item {
+      padding: 2rem 2.5rem;
+      border-right: 0.5px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .stat-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* ─── SECTION HEADERS ─── */
+    .section { padding: 5rem 3rem; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: var(--gold-dim);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 400;
+      color: var(--text);
+      font-style: italic;
+    }
+
+    .section-line {
+      flex: 1;
+      height: 0.5px;
+      background: var(--border);
+    }
+
+    /* ─── WORK GRID ─── */
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      gap: 1px;
+      background: var(--border);
+    }
+
+    .work-card {
+      background: var(--surface);
+      aspect-ratio: 2/3;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    /* For a featured first card */
+    .work-card.featured {
+      grid-row: span 2;
+      aspect-ratio: auto;
+    }
+
+    .work-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .work-card:hover .work-card-img { transform: scale(1.05); }
+
+    /* Placeholder for when no image is set */
+    .work-card-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--surface);
+      transition: background 0.3s;
+    }
+
+    .work-card:hover .work-card-placeholder { background: var(--surface2); }
+
+    .work-card-placeholder svg { opacity: 0.2; }
+
+    .work-card-placeholder .ph-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .work-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, #13110cee 0%, transparent 55%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.35s;
+    }
+
+    .work-card:hover .work-card-overlay { opacity: 1; }
+
+    .work-card-cat {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+
+    .work-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: var(--text);
+    }
+
+    .work-card-num {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+    }
+
+    /* ─── ABOUT ─── */
+   
+/* ABOUT SECTION LAYOUT */
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* ABOUT PHOTO */
+.about-photo-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* ABOUT TEXT */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.about-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  line-height: 1.4;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.about-quote em {
+  color: #bd7a53;
+  font-style: italic;
+}
+
+.about-content p:not(.about-quote) {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+/* MODEL MEASUREMENTS */
+.model-measurements {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  padding-top: 1.5rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.model-measurements div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.model-measurements span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+}
+
+.model-measurements strong {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-photo {
+    max-width: 280px;
+  }
+
+  .model-measurements {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* EDITORIAL LANDSCAPE SLIDESHOW */
+
+.editorial-section {
+  padding: 100px 5%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.editorial-section .section-heading {
+  margin-bottom: 55px;
+}
+
+.editorial-section .section-heading h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin: 12px 0;
+}
+
+.editorial-section .section-heading h2 em {
+  color: #bd7a53;
+}
+
+.editorial-carousel {
+  position: relative;
+  max-width: 1400px;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  padding: 45px 0;
+}
+
+.editorial-track {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  transition: transform 0.65s ease;
+  will-change: transform;
+}
+
+
+.editorial-track img {
+  flex: 0 0 calc((100% - 48px) / 3);
+  width: calc((100% - 48px) / 3);
+  aspect-ratio: 16 / 9;
+  height: 280px;
+  object-fit: cover;
+  object-position: center;
+  background: #211b18;
+
+  display: block;
+  opacity: 0.65;
+  transform: scale(0.88);
+  transition: all 0.5s ease;
+  cursor: pointer;
+  border: 1px solid rgba(189, 122, 83, 0.35);
+}
+
+.editorial-track img.active {
+  opacity: 1;
+  transform: scale(1.08);
+  z-index: 2;
+
+}
+/* HOVER EFFECT */
+.editorial-track img:hover {
+  opacity: 1;
+  transform: scale(1.04) translateY(-5px);
+}
+
+.editorial-track img.active:hover {
+  transform: scale(1.12) translateY(-5px);
+}
+
+.editorial-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #bd7a53;
+  background: rgba(25, 20, 18, 0.9);
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+
+.editorial-arrow:hover {
+  background: #bd7a53;
+  transform: translateY(-50%) scale(1.12);
+}
+
+.editorial-arrow.prev {
+  left: 12px;
+}
+
+.editorial-arrow.next {
+  right: 12px;
+}
+
+.editorial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 35px;
+}
+
+.editorial-dots button {
+  width: 7px;
+  height: 7px;
+  border: none;
+  border-radius: 50%;
+  background: #777;
+  cursor: pointer;
+}
+
+.editorial-dots button.active {
+  background: #bd7a53;
+  transform: scale(1.4);
+}
+
+@media (max-width: 768px){
+  .editorial-carousel {
+    padding: 25px 0;
+  }
+
+
+  .editorial-track {
+    gap: 12px;
+  }
+
+  .editorial-track img {
+    flex-basis: calc((100% - 24px) / 3);
+    width: calc((100% - 24px) / 3);
+  }
+
+  .editorial-track img.active {
+    transform: scale(1.08);
+  }
+}
+
+
+    /* ─── CONTACT ─── */
+    .contact-section {
+      padding: 5rem 3rem;
+      border-top: 0.5px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .contact-left .section-header { margin-bottom: 1.5rem; }
+
+    .contact-desc {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: var(--text-dim);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .contact-email {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-style: italic;
+      color: var(--gold);
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      transition: opacity 0.2s;
+    }
+
+    .contact-email:hover { opacity: 0.7; }
+
+    .contact-phone {
+      font-size: 13px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+    }
+
+    .contact-right {}
+
+    .social-title {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .social-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .social-list a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding-bottom: 1rem;
+      border-bottom: 0.5px solid var(--border);
+      transition: color 0.2s;
+    }
+
+    .social-list a:hover { color: var(--gold); }
+
+    .social-arrow { font-size: 16px; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 1.5rem 3rem;
+      border-top: 0.5px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+    }
+
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 13px;
+      color: var(--gold-dim);
+    }
+
+    /* ─── ANIMATIONS ─── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 768px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 6rem 1.5rem 3rem; }
+      .hero-right { display: none; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .section { padding: 3rem 1.5rem; }
+      .work-grid { grid-template-columns: repeat(2, 1fr); }
+      .work-card.featured { grid-row: span 1; aspect-ratio: 2/3; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-section { padding: 3rem 1.5rem; }
+      .contact-section { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+      footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+
+    /* ─── LIGHTBOX ─── */
+    .work-card { cursor: pointer; }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: #13110cf5;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      overflow-y: auto;
+    }
+
+    .lightbox.open { display: block; }
+
+    .lightbox-inner {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      animation: lbFadeIn 0.35s ease;
+    }
+
+    @keyframes lbFadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .lightbox-left {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .lightbox-main-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .lightbox-main-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 14px;
+      background: var(--surface);
+    }
+
+    .lightbox-main-placeholder svg { opacity: 0.15; }
+    .lightbox-main-placeholder span {
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .lightbox-right {
+      padding: 3rem 2.5rem 3rem 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .lightbox-close {
+      align-self: flex-end;
+      background: none;
+      border: 0.5px solid var(--border2);
+      color: var(--text-dim);
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .lightbox-close:hover { border-color: var(--gold); color: var(--gold); }
+
+    .lightbox-cat {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .lightbox-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .lightbox-gold-line {
+      width: 40px;
+      height: 0.5px;
+      background: var(--gold-dim);
+      margin-bottom: 1.5rem;
+    }
+
+    .lightbox-desc {
+      font-size: 15px;
+      color: var(--text-dim);
+      line-height: 1.9;
+      margin-bottom: 2.5rem;
+    }
+
+    .lightbox-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+      padding: 1.5rem;
+      border: 0.5px solid var(--border);
+      background: var(--surface);
+    }
+
+    .lightbox-meta-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+    }
+
+    .lightbox-meta-row span:first-child {
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .lightbox-meta-row span:last-child { color: var(--text-dim); }
+
+    .lightbox-extra-title {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .lightbox-extra-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      margin-bottom: 2.5rem;
+    }
+
+    .lightbox-thumb {
+      aspect-ratio: 1;
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .lightbox-thumb:hover { border-color: var(--gold-dim); }
+    .lightbox-thumb.active { border-color: var(--gold); }
+
+    .lightbox-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .lightbox-thumb-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+    }
+
+    .lightbox-nav {
+      display: flex;
+      gap: 1rem;
+      margin-top: auto;
+      padding-top: 1.5rem;
+      border-top: 0.5px solid var(--border);
+    }
+
+    .lb-nav-btn {
+      flex: 1;
+      background: none;
+      border: 0.5px solid var(--border2);
+      color: var(--text-dim);
+      padding: 0.75rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .lb-nav-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .lb-nav-btn:disabled { opacity: 0.2; cursor: default; }
+
+    @media (max-width: 768px) {
+      .lightbox-inner { grid-template-columns: 1fr; }
+      .lightbox-left { position: relative; height: 60vw; min-height: 280px; }
+      .lightbox-right { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="nav-logo">Pranama Jayawardhane</a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">
+        <div class="hero-tag-line"></div>
+        <span>Fashion Model · Sri Lanka</span>
+      </div>
+      <h1 class="hero-name">
+        Pranama
+        <span class="hero-name-italic">Jayawardhane</span>
+      </h1>
+      <p class="hero-desc">
+        Editorial. Runway. Commercial.<br/>
+        Bringing timeless elegance to every frame.
+      </p>
+      <div class="hero-btns">
+        <a href="#work" class="btn-primary">View Portfolio</a>
+        <a href="#contact" class="btn-secondary">Book a Shoot</a>
+      </div>
+    </div>
+    <div class="hero-photo-placeholder">
+      <img src="photoh.jpeg" alt="Pranama Jayawardhana Model Portfolio">
+    </div>
+
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="hero-scroll-line"></div>
+      scroll
+    </div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="stat-item fade-up">
+      <span class="stat-num">5+</span>
+      <span class="stat-label">Campaigns</span>
+    </div>
+
+    <div class="stat-item fade-up">
+      <span class="stat-num">3+</span>
+      <span class="stat-label">Years Active</span>
+    </div>
+    <div class="stat-item fade-up">
+      <span class="stat-num">3+</span>
+      <span class="stat-label">Runways</span>
+    </div>
+  </div>
+
+  <section class="section" id="work">
+    <div class="section-header fade-up">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Selected Work</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="work-grid fade-up">
+
+      <div class="work-card featured" onclick="openLightbox(0)">
+        
+        <img src="photo14.jpg"
+         alt="Editorial Look"
+         style="width:100%; height:100%; object-fit:cover;">
+        <div class="work-card-overlay">
+          <span class="work-card-cat">Magazine</span>
+          <span class="work-card-title">Mosaic Hearts</span>
+        </div>
+        <span class="work-card-num">01</span>
+      </div>
+      <div class="work-card" onclick="openLightbox(1)">
+        
+        <img src="photo2.jpg"
+         alt="Editorial Look"
+         style="width:100%; height:100%; object-fit:cover;">
+        <div class="work-card-overlay">
+          <span class="work-card-cat">Culture</span>
+          <span class="work-card-title">POTTU</span>
+        </div>
+        <span class="work-card-num">02</span>
+      </div>
+
+      <div class="work-card" onclick="openLightbox(2)">
+        
+        <img src="photo3.jpg"
+         alt="Editorial Look"
+         style="width:100%; height:100%; object-fit:cover;">
+
+        <div class="work-card-overlay">
+          <span class="work-card-cat">Commercial</span>
+          <span class="work-card-title">COLLAPSE</span>
+        </div>
+        <span class="work-card-num">03</span>
+      </div>
+
+      <div class="work-card" onclick="openLightbox(3)">
+
+        <img src="photo4.jpeg"
+         alt="Editorial Look"
+         style="width:100%; height:100%; object-fit:cover;">
+
+        <div class="work-card-overlay">
+          <span class="work-card-cat">jewelry</span>
+          <span class="work-card-title">YAGANDI</span>
+        </div>
+        <span class="work-card-num">04</span>
+      </div>
+
+      <div class="work-card" onclick="openLightbox(4)">
+       
+         <img src="photo5.jpeg"
+         alt="Editorial Look"
+         style="width:100%; height:100%; object-fit:cover;">
+
+        <div class="work-card-overlay">
+          <span class="work-card-cat">Street </span>
+          <span class="work-card-title">Juvenate</span>
+        </div>
+        <span class="work-card-num">05</span>
+      </div>
+
+      <div class="work-card" onclick="openLightbox(5)">
+        
+                <img src="photo6.jpeg"
+         alt="Editorial Look"
+         style="width:100%; height:100%; object-fit:cover;">
+        <div class="work-card-overlay">
+          <span class="work-card-cat">Cosmic</span>
+          <span class="work-card-title">MUGLER-AEILAN</span>
+        </div>
+        <span class="work-card-num">06</span>
+      </div>
+
+      <div class="work-card" onclick="openLightbox(6)">
+
+        
+         <img src="photo8.jpeg"
+         alt="Editorial Look"
+         style="width:100%; height:100%; object-fit:cover;">
+        <div class="work-card-overlay">
+          <span class="work-card-cat"></span>
+          <span class="work-card-title">White Shirt in Lines</span>
+        </div>
+        <span class="work-card-num">07</span>
+      </div>
+      <div class="work-card" onclick="openLightbox(7)">
+
+         <img src="photo10.jpg"
+         alt="Editorial Look"
+         style="width:100%; height:100%; object-fit:cover;">
+        <div class="work-card-overlay">
+          <span class="work-card-cat">Luxury</span>
+          <span class="work-card-title">Mosaic Hearts</span>
+        </div>
+        <span class="work-card-num">08</span>
+      </div>
+
+      <div class="work-card" onclick="openLightbox(8)">
+
+         <img src="photo9.jpg"
+         alt="Editorial Look"
+         style="width:100%; height:100%; object-fit:cover;">
+        <div class="work-card-overlay">
+          <span class="work-card-cat">Nature</span>
+          <span class="work-card-title">Rose of May</span>
+        </div>
+        <span class="work-card-num">09</span>
+      </div>
+      <div class="work-card" onclick="openLightbox(9)">
+
+         <img src="photo9.jpeg"
+         alt="Editorial Look"
+         style="width:100%; height:100%; object-fit:cover;">
+        <div class="work-card-overlay">
+          <span class="work-card-cat">Academic Experiment</span>
+          <span class="work-card-title">Kinetic Origami</span>
+        </div>
+        <span class="work-card-num">10</span>
+      </div>
+
+      <div class="work-card" onclick="openLightbox(10)">
+
+         <img src="photo11.jpg"
+         alt="Editorial Look"
+         style="width:100%; height:100%; object-fit:cover;">
+        <div class="work-card-overlay">
+          <span class="work-card-cat">Casual </span>
+          <span class="work-card-title">Commercial Collection</span>
+        </div>
+        <span class="work-card-num">11</span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="section-header fade-up">
+      <span class="section-num">02</span>
+      <h2 class="section-title">About Me</h2>
+      <div class="section-line"></div>
+    </div>
+
+
+
+<div class="about-grid">
+
+  <!-- LEFT SIDE: PHOTO -->
+  <div class="about-photo-wrap fade-up">
+    <img
+      src="about.jpeg"
+      alt="Pranama Jayawardhane - Fashion Model"
+      class="about-photo"
+    >
+    <div class="about-gold-accent"></div>
+  </div>
+
+  <!-- RIGHT SIDE: MODEL PROFILE -->
+  <div class="about-content fade-up">
+
+    <p class="about-quote">
+      A model who believes that fashion is
+      <em>art, expression, and identity — all in one.</em>
+    </p>
+
+    <p>
+      Hi, I'm Pranama Jayawardhane — A fashion model based in Sri Lanka
+      with a deep love for storytelling through style. I bring a unique
+      blend of elegance, strength, and versatility to every shoot and
+      runway appearance.
+    </p>
+
+    <p>
+      Whether it's an intimate editorial, a commercial campaign,
+      or the raw energy of a live runway show, I give every project my
+      complete dedication and creative presence. My goal is always to
+      bring the designer's vision to life — authentically and powerfully.
+    </p>
+
+    <div class="model-measurements">
+      <div><span>Height</span><strong>172 cm</strong></div>
+      <div><span>Bust</span><strong>34"</strong></div>
+      <div><span>Waist</span><strong>24"</strong></div>
+      <div><span>Hips</span><strong>35"</strong></div>
+      <div><span>Eyes</span><strong>Brown</strong></div>
+      <div><span>Hair</span><strong>Black</strong></div>
+      <div><span>Shoe</span><strong>38 EU</strong></div>
+    </div>
+
+  </div>
+
+  </section>
+  
+<!-- EDITORIAL LANDSCAPE SLIDESHOW -->
+<section class="editorial-section" id="editorial">
+
+  <div class="section-heading">
+    <p class="section-eyebrow">BEHIND THE LENS</p>
+    <h2>Editorial <em>Moments</em></h2>
+    <p>A collection of moments through fashion and expression.</p>
+  </div>
+
+  <div class="editorial-carousel">
+
+    <button class="editorial-arrow prev" onclick="moveEditorial(-1)">&#10094;</button>
+
+    <div class="editorial-track">
+      <img src="landscape1.jpg" alt="Editorial photograph">
+      <img src="landscape2.jpg" alt="Editorial photograph">
+      <img src="lanscape3.png" alt="Editorial photograph">
+      <img src="landscape4.jpg" alt="Editorial photograph">
+      <img src="landscape5.jpeg" alt="Editorial photograph">
+    
+    </div>
+
+    <button class="editorial-arrow next" onclick="moveEditorial(1)">&#10095;</button>
+
+  </div>
+
+  <div class="editorial-dots"></div>
+
+</section>
+
+
+  <section class="contact-section" id="contact">
+    <div class="contact-left">
+      <div class="section-header fade-up">
+        <span class="section-num">03</span>
+        <h2 class="section-title">Contact</h2>
+        <div class="section-line"></div>
+      </div>
+      <p class="contact-desc fade-up">
+        Available for editorial shoots, runway shows, brand campaigns, and lookbook sessions.
+      </p>
+      <a href="mailto:pranamajayawardhana@gmail.com" class="contact-email fade-up">pranamajayawardhana@gmail.com</a>
+      <span class="contact-phone fade-up">+94 70 294 6054 &nbsp;·&nbsp; Colombo, Sri Lanka</span>
+    </div>
+
+    <div class="contact-right fade-up">
+      <p class="social-title">Find Me Online</p>
+      <ul class="social-list">
+        <li><a href="https://www.instagram.com/pranamajayawardhane?rpxt=ZG9ybjJmZHo3dXh3&utm_source=qr" target="_blank">Instagram <span class="social-arrow">↗</span></a></li>
+
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-copy">© 2026 Pranama Jayawardhane. All rights reserved.</span>
+    <span class="footer-brand">Fashion Model · Sri Lanka</span>
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+
+      <div class="lightbox-left">
+        <div class="lightbox-main-placeholder" id="lb-main-placeholder">
+          <svg width="48" height="48" fill="none" stroke="#bd7a53" stroke-width="0.6" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/>
+          </svg>
+          <span>Main photo</span>
+        </div>
+        
+        <img src="" alt="" class="lightbox-main-img" id="lb-main-img" style="display:none;">
+      </div>
+
+      <div class="lightbox-right">
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+
+        <p class="lightbox-cat" id="lb-cat">Magazine</p>
+        <h2 class="lightbox-title" id="lb-title">Editorial Look</h2>
+        <div class="lightbox-gold-line"></div>
+        <p class="lightbox-desc" id="lb-desc">A stunning editorial shoot capturing the essence of modern fashion. Bold lines, dramatic lighting, and timeless elegance come together in this magazine-ready collection.</p>
+
+        <div class="lightbox-meta">
+          <div class="lightbox-meta-row">
+            <span>Year</span>
+            <span id="lb-year">2025</span>
+          </div>
+          <div class="lightbox-meta-row">
+            <span>Photographer</span>
+            <span id="lb-photographer">Your Photographer Name</span>
+          </div>
+          <div class="lightbox-meta-row">
+            <span>hmua</span>
+            <span id="lb-hmua">Kumuthu Ranasinghe</span>
+          </div>
+          <div class="lightbox-meta-row">
+            <span>Brand</span>
+            <span id="lb-brand">Brand Name</span>
+          </div>
+        </div>
+
+        <p class="lightbox-extra-title">More from this shoot</p>
+        <div class="lightbox-extra-grid" id="lb-extra-grid">
+          </div>
+
+        <div class="lightbox-nav">
+          <button class="lb-nav-btn" id="lb-prev" onclick="navigateLightbox(-1)">← Previous</button>
+          <button class="lb-nav-btn" id="lb-next" onclick="navigateLightbox(1)">Next →</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, i * 80);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    /* ════════════════
+       LIGHTBOX DATA
+       ─ Edit each project below:
+         title       : name shown at the top
+         cat         : category label (Magazine, Couture, etc.)
+         desc        : description paragraph
+         year        : shoot year
+         photographer: photographer name
+         location    : shoot location
+         brand       : brand / client name
+         mainPhoto   : the main large photo (same as your grid card photo)
+         extraPhotos : array of extra photos from the same shoot
+                       (add as many as you want)
+
+       HOW TO ADD PHOTOS:
+         mainPhoto: "photo1.jpg"
+         extraPhotos: ["photo1-b.jpg", "photo1-c.jpg", "photo1-d.jpg"]
+         (put all photos in the same folder as this HTML file)
+     ════════════════════════════════════════ */
+    const projects = [
+      {
+        title: "Mosaic Hearts",
+        cat: "Magazine",
+        desc: "Shades of a Lover's Heart is a melodious exploration of the complex journey of love. This fashion collection is a visual symphony that connects a range of emotions and stages of love into a kalaeidescope of exciting designs. Each piece of mosaic hearts reflects a different aspect of the profound and enchanting journey of love. ",
+        photographer: "Thehan de Silva",
+        hmua: "Kumuthu Ranasinghe",
+        year: "2024",
+        brand: "Luxe-pret label by Imalsha Ellepola",
+        mainPhoto: "photo1m.jpg",           // e.g. "photo1.jpg"
+        extraPhotos: ["photo1a.jpg", "photo1b.jpg", "photo1c.jpg"]  // e.g. ["photo1-b.jpg", "photo1-c.jpg"]
+      },
+      {
+        title: "POTTU",
+        cat: "",
+        desc: "An immersive fashion exhibition exploring the impacts of generational trauma from the Sri Lankan civil war. Using fashion as an interactive storytelling tool, the project traces a movement from constriction to liberation through culturally significant motifs and symbolic techniques. Rooted in ideas of healing, awareness, and cultural reclamation, the exhibition creates space for reflection on identity, resilience, and cultural pride. Through thoughtful design decisions, Milani Lawrence brings attention to the long-term effects of trauma while encouraging deeper conversations around heritage and renewed identity.",
+        year: "2024",
+        photographer: "Tishan Lakruwan",
+        hmua: "Kumuthu Ranasinghe",
+        location: "Colombo, Sri Lanka",
+        brand: "Milani Lawrence",
+        mainPhoto: "photo2m.jpg",
+        extraPhotos: ["photo2a.jpg", "photo2b.jpg", "photo2c.jpg"]
+      },
+      {
+        title: "COLLAPSE",
+        cat: "",
+        desc: "Redirect in Progress. A moment suspended between who we were and who we are becoming. This look reflects the instability of identity, movement, and transformation - where layered silhouettes, disrupted patterns, and chromatic tension create a visual language of redirection and rebirth. Nothing here follows a straight line. Nothing here asks for permission.",
+        year: "2026",
+        photographer: " Thimira Viraj",
+        hmua: "Kumuthu Ranasinghe",
+        location: "Colombo, Sri Lanka",
+        brand: "COLLAPSE by Clair Weerasekara",
+        mainPhoto: "photo3m (1).jpg",
+        extraPhotos: ["photo3m (2).jpg", "photo3m (3).jpg", "photo3m (4).jpg"]
+      },
+      {
+        title: "YAGANDI",
+        cat: "",
+        desc: "YAGANDI is a bold, surrealistic jewelry label born to spotlight Sri Lankan identity on the global fashion stage. Rooted in our island's rich heritage and fading craftsmanship, each piece transforms ancient cultural narratives into surreal, gender-neutral body adornments. Fusing tradition with modernity, YAGANDI isn't just art ; it's a movement. This is where heritage meets high fashion ;unapologetically bold, unforgettably Sri Lankan. YAGANDI is designed to bring Sri Lankan artistry into the spotlight, ensuring that these age-old traditions are not only preserved but celebrated worldwide.",
+        year: "2025",
+        photographer: "Shan Priyanga",
+        hmua: "Kumuthu Ranasinghe",
+        location: "Colombo Fort",
+        brand: "YAGANDI by Gayandi De Silva",
+        mainPhoto: "photo4m.jpeg",
+        extraPhotos: ["photo4a.jpeg", "photo4b.jpeg", "photo4c.jpeg"]
+      },
+      {
+        title: "Juvenate",
+        cat: "",
+        desc: " A slow fashion collection rooted in contemporary Sri Lankan culture. Reinterpreting overlooked local art by subtle resistance and critical design thinking emphasising the historical 43 movement to present contemporary modern art through emotionally structured silhouettes ,print, and story-without relying on tradition to define Sri Lankan identity through a modern lens yet culturally rooted resources",
+        year: "2025",
+        photographer: "Malith Senevirathne",
+        hmua: "Kumuthu Ranasinghe",
+        location: "Studio, Colombo",
+        brand: "Dulmi Galappaththy",
+        mainPhoto: "photo5m.jpeg",
+        extraPhotos: ["photo5a.JPEG", "photo5b.JPEG", "photo5d.jpeg"]
+      },
+      {
+        title: " MUGLER-AEILAN",
+        cat: "COSMIC COLLECTION",
+        desc: "Rooted in the concept of cosmic life cycles, AEILAN 'mirrors the celestial journey of star birth to death, drawing powerful parallels with the phases of human life-from birth to death.' AEILAN transforms Mugler's signature sculptural futurism into a softer, androgynous approach to weddingwear. Where Mugler once forged celestial armor, AEILAN introduces a gentle boldness. This collection is designed for androgynous audience, fashion-forward individuals, and those seeking meaning beyond tradition in wedding attire.",
+        year: "2025",
+        photographer: "Thimira Viraj",
+        hmua: "Kumuthu Ranasinghe",
+        location: "Galle, Sri Lanka",
+        brand: "LALI-ENVOGUE by Lalithya Senevirathne",
+        mainPhoto: "photo6m.jpeg",
+        extraPhotos: ["photo6a.jpeg", "photo6b.jpeg", "photo6c.jpeg"]
+      },
+      {
+       title: "White Shirt in Lines",
+       cat: "",
+        desc: "Designed for Maison Rabih Kayrouz's S/S 25/26 ready-to-wear collection. Inspired by seashells and crafted under the concept 'Fluidature-Structured yet fluid',this design represents the harmony between structure and fluidness..",
+        year: "2025",
+       photographer: "Thisan Lakruwan",
+       hmua: "Thamodi Navandana",
+        location: "Sri Lanka",
+        brand: "Imasha Dasuni",
+        mainPhoto: "photo7a.jpeg",
+        extraPhotos: [
+        "photo7m.jpeg",
+        "photo7b.jpeg",
+        "photo7c.jpeg"]
+       },
+      {
+       title: "Mosaic Hearts",
+        cat: "Luxury",
+        desc: "Shades of a Lover's Heart is a melodious exploration of the complex journey of love. This fashion collection is a visual symphony that connects a range of emotions and stages of love into a kalaeidescope of exciting designs. Each piece of mosaic hearts reflects a different aspect of the profound and enchanting journey of love. ",
+        year: "2024",
+        photographer: "Thehan de Silva",
+        hmua: "Kumuthu Ranasinghe",
+        location: "Sri Lanka",
+        brand: "Luxe-pret label by Imalsha Ellepola",
+        mainPhoto: "photo8m (1).jpg",
+        extraPhotos: [
+        "photo8a.png",
+        "photo8b.jpg",
+        "photo8m (2).jpg"
+    ]
+      }, 
+
+      {
+        title: "Rose of May ",
+        cat: "",
+        desc: " Elizabethan echoes surface through ruffs, corsetry, and dramatic proportions, yet they are reshaped through contemporary cuts, non-traditional crinoline and bustle structures, and seam-shifting that distorts typical garment construction. These pieces do not romanticize tragedy, they hold it, question it, and transform it. Though theatrically styled to intensify the narrative, the pieces are designed as market-ready separates, allowing the wearer to deconstruct the drama and reinterpret each garment within their own everyday language. ",
+        year: "2026",
+        photographer: "Thehan de Silva",
+        hmua: " Kumuthu Ranasinghe",
+        location: "Galle, Sri Lanka",
+        brand: "Maleesha Subhash",
+        mainPhoto: "photo9m.jpg",
+        extraPhotos: ["photo9a.jpg", "photo9b.jpg", "photo9c.jpg"]
+      },
+      {
+        title: "SILHOUETTE & FORM CHANGE THROUGH DRESSING MOVEMENT",
+        cat: "Academic Experimental Project",
+        desc: "This experimental design project reimagines the act of dressing as a transformative interaction, constant dialogue between body and garment. Using fabric-only kinetic origami structures, the garment is conceptualized as a hollow cylinder and the body as a moving tube. As the body enters, touches, and moves through these origami forms, pre-configured transformations are triggered at key activation points - creating a choreography of silhouette shifts and structural transitions. These transformations are not arbitrary — they emerge based on the body's placement, movement, and interaction with the garment..",
+        year: "2025",
+        photographer: " Sahan Rosa",
+        hmua: "Kumuthu Ranasinghe",
+        location: "Sri Lanka",
+        brand: "Thisuri Mindula ",
+        mainPhoto: "photo10m.jpeg",
+        extraPhotos: [
+        "photo10a.jpeg",
+        "photo10b.jpeg",
+        "photo10c.jpeg"]
+      },
+            {
+        title: " Shining Brighter",
+        cat: "Commercial Photoshoot",
+        desc: " The sea, once it casts its spell, holds one in its net of wonder forever.",
+        year: "2025",
+        photographer: " Merriments by Thulshika",
+        hmua: "Navanjana Ravihansi",
+        location: "Sri Lanka",
+        brand: "Tharushini Anuththara ",
+        mainPhoto: "photo11m.jpg",
+        extraPhotos: [
+        "photo11a.jpg",
+        "photo11b.jpg",
+        "photo11c.jpg"]
+      }
+
+
+    ];
+
+    let currentProject = 0;
+    let currentExtra = -1; // -1 means main photo is shown
+
+    function openLightbox(index) {
+      currentProject = index;
+      currentExtra = -1;
+      renderLightbox();
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function navigateLightbox(dir) {
+      currentProject = (currentProject + dir + projects.length) % projects.length;
+      currentExtra = -1;
+      renderLightbox();
+    }
+
+    function showExtraPhoto(idx) {
+      currentExtra = idx;
+      const p = projects[currentProject];
+      const src = p.extraPhotos[idx];
+      const mainImg = document.getElementById('lb-main-img');
+      const placeholder = document.getElementById('lb-main-placeholder');
+      if (src) {
+        mainImg.src = src;
+        mainImg.style.display = 'block';
+        placeholder.style.display = 'none';
+      } else {
+        mainImg.style.display = 'none';
+        placeholder.style.display = 'flex';
+      }
+      document.querySelectorAll('.lightbox-thumb').forEach((t, i) => {
+        t.classList.toggle('active', i === idx);
+      });
+    }
+
+    function renderLightbox() {
+      const p = projects[currentProject];
+
+      // text content
+      document.getElementById('lb-cat').textContent = p.cat;
+      document.getElementById('lb-title').textContent = p.title;
+      document.getElementById('lb-desc').textContent = p.desc;
+      document.getElementById('lb-year').textContent = p.year;
+      document.getElementById('lb-photographer').textContent = p.photographer;
+      document.getElementById('lb-hmua').textContent = p.hmua || "Not specified";
+      document.getElementById('lb-brand').textContent = p.brand;
+
+      // main photo
+      const mainImg = document.getElementById('lb-main-img');
+      const placeholder = document.getElementById('lb-main-placeholder');
+      if (p.mainPhoto) {
+        mainImg.src = p.mainPhoto;
+        mainImg.alt = p.title;
+        mainImg.style.display = 'block';
+        placeholder.style.display = 'none';
+      } else {
+        mainImg.style.display = 'none';
+        placeholder.style.display = 'flex';
+      }
+
+      // extra photos thumbnails
+      const grid = document.getElementById('lb-extra-grid');
+      grid.innerHTML = '';
+      p.extraPhotos.forEach((src, i) => {
+        const thumb = document.createElement('div');
+        thumb.className = 'lightbox-thumb';
+        thumb.onclick = () => showExtraPhoto(i);
+        if (src) {
+          thumb.innerHTML = `<img src="${src}" alt="Extra photo ${i+1}">`;
+        } else {
+          thumb.innerHTML = `<div class="lightbox-thumb-placeholder">Photo ${i+1}</div>`;
+        }
+        grid.appendChild(thumb);
+      });
+
+      // nav buttons
+      document.getElementById('lb-prev').disabled = false;
+      document.getElementById('lb-next').disabled = false;
+    }
+
+    // Close on background click
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') navigateLightbox(1);
+      if (e.key === 'ArrowLeft') navigateLightbox(-1);
+    });
+    
+
+/* FIVE PHOTO INTERACTIVE CAROUSEL */
+
+const editorialTrack = document.querySelector('.editorial-track');
+const editorialImages = document.querySelectorAll('.editorial-track img');
+const editorialDots = document.querySelector('.editorial-dots');
+const editorialCarousel = document.querySelector('.editorial-carousel');
+
+let editorialIndex = 0;
+let editorialTimer;
+
+function updateEditorial() {
+  const images = Array.from(editorialImages);
+  const currentImage = images[editorialIndex];
+
+  const carouselWidth = editorialCarousel.clientWidth;
+  const imageWidth = currentImage.offsetWidth;
+  const gap = parseFloat(getComputedStyle(editorialTrack).gap) || 0;
+
+  const imagePosition = editorialIndex * (imageWidth + gap);
+  const offset = (carouselWidth - imageWidth) / 2;
+
+  editorialTrack.style.transform =
+    `translateX(${offset - imagePosition}px)`;
+
+  images.forEach((img, index) => {
+    img.classList.toggle('active', index === editorialIndex);
+  });
+
+  editorialDots.innerHTML = '';
+
+  images.forEach((img, index) => {
+    const dot = document.createElement('button');
+
+    dot.classList.toggle('active', index === editorialIndex);
+
+    dot.addEventListener('click', () => {
+      editorialIndex = index;
+      updateEditorial();
+      restartEditorial();
+    });
+
+    editorialDots.appendChild(dot);
+
+    // SELECT PHOTO USING MOUSE CLICK
+    img.onclick = () => {
+      editorialIndex = index;
+      updateEditorial();
+      restartEditorial();
+    };
+  });
+}
+
+function moveEditorial(direction) {
+  editorialIndex =
+    (editorialIndex + direction + editorialImages.length) %
+    editorialImages.length;
+
+  updateEditorial();
+  restartEditorial();
+}
+
+function restartEditorial() {
+  clearInterval(editorialTimer);
+
+  editorialTimer = setInterval(() => {
+    editorialIndex =
+      (editorialIndex + 1) % editorialImages.length;
+
+    updateEditorial();
+  }, 4000);
+}
+
+// PAUSE WHEN MOUSE IS OVER SLIDESHOW
+editorialCarousel.addEventListener('mouseenter', () => {
+  clearInterval(editorialTimer);
+});
+
+editorialCarousel.addEventListener('mouseleave', restartEditorial);
+
+window.addEventListener('resize', updateEditorial);
+
+window.addEventListener('load', updateEditorial);
+
+updateEditorial();
+restartEditorial();
+
+
+  </script>
+
+</body>
+</html>
